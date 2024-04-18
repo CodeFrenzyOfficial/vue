@@ -1,0 +1,2044 @@
+<!-- eslint-disable no-unused-vars -->
+<!-- eslint-disable no-unused-vars -->
+<!-- eslint-disable no-mixed-spaces-and-tabs -->
+<template> 
+
+
+  <div ref="section">
+    
+    <vue-element-loading :active="isLoading" :is-full-screen="true"/>
+
+    <b-card v-if="showSearch" no-body>
+   
+         <b-card-text></b-card-text>
+           <b-card-text>
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="results-left">
+                                    <div id="layOut">
+                                        <h1 class="mainH1">Find a Hollings Cancer Center Researcher</h1>
+                                        <br>
+                                        <div class="mainH3_">
+                                              {{search_results}}
+                                          </div> 
+                                        <!-- <div class="person-info" v-for="dataObj in RESEARCHERSLIST.RESEARCHERSLIST" :key="dataObj.EMAIL"> -->
+                                          <div class="person-info" v-for="dataObj in selectedRESEARCHERSLIST" :key="dataObj.EMAIL">
+                                            <hgroup class="clearfix">
+                                                <!-- <h3>
+                                                    <a href="#0">{{ dataObj.PRIMARY_NAME }}
+                                                    </a>
+                                                </h3> -->
+                                            </hgroup>
+                                            <div class="row">
+                                                <div class="col-md-3 col-sm-3 col-xs-3">
+                          
+                                                    <img v-bind:src="dataObj.IMAGE" class="person-image" @error="imageLoadError">
+                                               <a href="#" v-on:click="loadSelectedResearcher_parent(dataObj)">
+                                                     
+                                                    </a>
+                          <!-- <a href="#" v-on:click="selectedNewProfile(dataObj)">
+                                                        <button type="button" class="view-profile">View New Profile</button>
+                                                    </a> -->
+                        
+                                                </div>
+                                                <div class="col-md- col-sm-5 col-xs-5">
+                                                  <h4 style="text-align: left;">
+                                                    <a href="" v-on:click="loadSelectedResearcher_parent(dataObj)">{{ dataObj.PRIMARY_NAME }} </a>
+                                                  </h4>
+                                                    <h5>Department</h5>
+                                                    <ul class="work" style="list-style: none;">
+                                                        <li><i class="fa fa-angle-double-right "></i>&nbsp;{{dataObj.DEPARTMENT}}</li>
+                                                    </ul>
+                                                    <br><br>
+                                                    <h5>Program</h5>
+                                                    <ul class="work" style="list-style: none;">
+                                                        <li><i class="fa fa-angle-double-right "></i>&nbsp;{{dataObj.PROGRAM}}</li>
+                                                    </ul>    
+                                                </div>
+                                                <div class="m-clear">
+                                                </div>
+                                                <div class="col-sm-4">
+                              <h5>Rank</h5>
+                                                    <p><i class="fa fa-plus"></i>&nbsp; {{dataObj.ACADEMIC_TITLE}}</p>
+                           <br>
+                                                    <!-- <p><i class="fa fa-envelope"></i>&nbsp;<a v-bind:href="dataObj.EMAIL">{{ dataObj.EMAIL }}</a></p> -->
+                                                        <h5>Membership</h5>
+                          <p><i class="fa fa-plus"></i>&nbsp; {{ dataObj.MEMBERSHIP }}</p>
+                          <br>
+                             <h5>College</h5>
+                                                    <ul class="work" style="list-style: none;">
+                                                        <li><i class="fa fa-angle-double-right "></i>&nbsp;{{dataObj.COLLEGE}}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>                      
+                                        </div>                    
+                                    </div>                  
+                                </div>                
+                            </div>              
+              <div class="col-md-3">
+                  <!-- <b-button   variant="primary" @click="OnClicked('LEADERSHIP')" >Leadership</b-button>
+                  <b-button  variant="primary"  @click="OnClicked('ALL')" >ALL</b-button>
+                  <b-button   variant="primary" @click="OnClicked('Cancer_Control')" >Cancer Control</b-button>
+                  <b-button   variant="primary" @click="OnClicked('Developmental_Cancer_Therapeutics')" >Developmental Cancer Therapeutics</b-button>
+                  <b-button  variant="primary"  @click="OnClicked('Cancer_Biology_Immunology')" >Cancer Biology & Immunology</b-button> -->
+
+                  <div class="mb-3" role="group">
+                      <div>
+                        <br>
+                <br>
+                <br>
+               <h5>Search</h5>
+              </div>
+
+                  <label for="program" class="text-info mb-2">Program:</label>
+                  <b-form-select :options="programs" v-on:change="getSelectedProgramItem"></b-form-select>
+                  </div>
+                  <div role="group" >       
+      <label for="last-name" class="text-info mb-2">Last Name:</label>
+      <b-form-input v-model="search_last_name" id="last-name" trim></b-form-input>
+    </div>
+
+    <div class="mt-4">
+      <b-button  class="view-profile-btn"  @click="OnClicked('Name_Search')" >Search</b-button> 
+    </div>
+
+                    <!-- <SearchBar /> -->
+                </div>
+                        </div>
+
+                    </b-card-text>
+             
+      </b-card> 
+
+         <div v-if="showProfile">         
+          <b-row  no-gutters >   
+          <b-col cols="3" class="p-0 profileFind-card-text" >
+            <a class="nav-link"  @click="selectedSearch('Back')"                      
+                          v-bind:href="''"                       
+                          aria-label= 'Support' >                         
+                          Find Another Researcher </a>
+          <!-- <b-button class="btn btn-primary2 mt-50 myLink "  @click="selectedSearch('Back')" >Find Another Researcher</b-button>  -->
+          </b-col>
+          <b-col cols="3" class="p-0 profileFind-card-text" ></b-col>
+          <b-col cols="6" class="p-0 profileFind-card-text" >
+
+
+      
+      </b-col>
+      </b-row>
+         <!--   <b-button class="btn btn-primary2 mt-50"   @click="selectedSearch('Back')" >Find Another Researcher</b-button> 
+
+         <b-button   variant="link" @click="selectedSearch('Back')" >&lt; &lt; &lt;  Back</b-button>
+         <a href="#" v-on:click="selectedSearch(dataObj)">
+                                                        <button type="button" class="view-profile">Back</button>
+                                                    </a> -->
+         <!-- begin profile section -->
+
+        <div>     
+           <profileSheet :selectedmembersname="selectedmembersname"/>
+
+</div>                                         
+</div>
+    </div>
+   
+    
+
+ 
+</template>
+
+ <script type='text/javascript' src='https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js'></script> 
+<script>
+  import profileSheet from './profileLimited.vue'
+ // import member_ProfileSheet from './member_Profile_Limited.vue'
+// import profilePage from '../components/profile.vue'
+ //  import mockStyle from '../components/profile.vue'
+
+ // import newStyle from '../components/newLayout.vue'
+
+ // import newStyle from '../components/profile.vue'
+//  import MEMBERSDATA from  "../data/MembersData.json";
+
+ import MEMBERSDATA from  "../data/MembersData_internal.json";
+//import MEMBERSDATA from  "./MembersData.json";
+// import MEMBERSDATA from '[filepath]/json/MembersData.json'
+
+ import RESEARCHERS from "../data/Researchers_limited_copy.json";
+ import LEADERSHIPDATA from "../data/leadership.json";
+  // import SearchBar from "./searchbar.vue";
+    import axios from "axios";
+  import VueElementLoading from 'vue-element-loading'
+  import Cloud from 'vue-d3-cloud'
+
+
+ // import * as _altmetric_embed_init from 'https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js';
+
+
+
+    export default {
+    components: {
+  
+    VueElementLoading,
+    Cloud,
+  //  member_ProfileSheet,
+    profileSheet
+
+    
+  
+
+ 
+  },
+        name: 'TabComponent',
+        data() {
+            return {
+              programs: [
+              { value: "", text: "" },                
+              { value: "LEADERSHIP", text: "Leadership" },
+              { value: "ALL", text: "All" },
+              { value: "Cancer_Biology_Immunology", text: "Cancer Biology & Immunology" },
+              { value: "Cancer_Control", text: "Cancer Control" },
+              { value: "Developmental_Cancer_Therapeutics", text: "Developmental Cancer Therapeutics" }
+              
+      
+    ],
+      showSearch:true,
+      selectedmembersname: ['carpente',''],
+      MemberID:'',
+      showMemberIDProfile: false,
+      showProfile: false,
+        search_last_name: '',
+        search_last_name_hidden: '',
+        hasVideo: false,
+        hasClinicalTrials: false,
+         researchers: RESEARCHERS,
+         leaders: LEADERSHIPDATA,
+         members: MEMBERSDATA.RESEARCHERSLIST,
+        searchQuery:[],
+        new_researchers:[],
+        publicationData:[],
+        clinicalTrials:[],
+        fundingData:[],
+        issnList:'',
+        grantID:[],
+        showBack: false,
+        allpublicationData:[],
+        iCitepublicationData:[],
+        scopusData:[],
+        searchLogic: "ALL",
+        search_results: "SEARCH RESULTS FOR",
+        edit_results: "ADD NEW OR EDIT",
+        image_results: "https://muschealth.org/MUSCApps/HealthAssets/ProfileImages/NoImageProvided.png",
+        PMID_DATA:[],
+        PRIMARY_NAME:"",
+        DEPARTMENT: "",
+        COLLEGE: "",
+        MEMBERSHIP: "",
+        ACADEMIC_TITLE: "",
+        PROGRAM: "",
+        BIOGRAPHY: [],
+        RESEARCH_INTEREST: "",
+        RESEARCHERSLIST:[],
+        CANCER_FOCUS:[],
+        POSITIONS:"",
+        VIDEO_URL: "",
+        step: 0,
+        pub_step: 0, 
+        pub_step_top: 0,          
+        bioitems:[],
+        linkItems:[],
+        selectedPublications: "",
+        showModal: false,
+        tabsMetric: 0,
+        // pub_data:"",
+        showSpinner: false,
+        essnList:"",
+        interest_counts:"",
+       // words: [{}],
+        cloud_words: [
+             
+            ],
+            fontSizeMapper: word => Math.log2(word.value) * 50,
+
+            };			
+        },
+        beforeMount() {
+         // alert(BeforeMount)
+         // this.loadResearchersList("LEADERSHIP");
+},
+
+    
+   
+   updated(){
+   
+   if(this.pub_step === 0){
+     // _altmetric_embed_init();
+
+    //   _altmetric_embed_init(document.getElementById('selectedPubs'));
+   //    _altmetric_embed_init('#selectedPubs');
+
+   //   console.log("updated selectedPubs");
+     // this.sleep(1000)
+   //   this.isLoading=false;
+    }
+   },
+   mounted() {
+ //   this.loadResearchersList("LEADERSHIP");
+       window.onpopstate = function(event) {
+          this.showProfile = false
+          this.showSpinner = true
+   //  console.log("location profile: " + document.location + ", state: " + JSON.stringify(event.state));
+   };
+
+
+    this.$nextTick(() => {
+    // The whole view is rendered, so I can safely access or query
+    // the DOM. ¯\_(ツ)_/¯
+    if(this.step ===3){
+
+   //     _altmetric_embed_init(document.getElementById('selectedPubs'));
+   //
+    
+    //  _altmetric_embed_init();
+       console.log("mounted selectedPubs");
+    }
+    })
+  },
+  unmounted () {
+    //window.removeEventListener('scroll', this.handleScroll);
+  },
+
+      methods: {  
+        handleScroll(){
+
+        },
+        clickedShowDetailModal(){
+            this.showProfile = false
+            this.showMemberIDProfile = false
+            this.showSpinner = false
+            this.showSearch = true
+            this.showBack = false
+          //  this.$router.replace({'query': null}); 
+             this.$router.replace('/')
+             this.searchLogic = "LEADERSHIP"
+             this.loadResearchersList("LEADERSHIP");
+        },
+        OnNavClicked(arg){
+          switch (arg) {
+            case "Back":
+            this.showProfile = false
+            this.showMemberIDProfile = false
+            this.showSpinner = false
+            this.showSearch = true
+            this.showBack = false
+          //  this.$router.replace({'query': null}); 
+             this.$router.replace('/')
+             this.searchLogic = "LEADERSHIP"
+             this.loadResearchersList("LEADERSHIP");
+          }
+
+        },
+        programLink(arg){
+        if(arg === "Cancer Biology & Immunology"){
+          window.open('https://hollingscancercenter.musc.edu/research/programs/cancer-biology-immunology', '_blank');
+        }
+
+        if(arg === "Cancer Control"){
+          window.open('https://hollingscancercenter.musc.edu/research/programs/cancer-control', '_blank');
+        }
+
+        if(arg === "Developmental Cancer Therapeutics"){
+          window.open('https://hollingscancercenter.musc.edu/research/programs/cancer-therapeutics', '_blank');
+        }        
+
+
+        
+
+      },
+
+          getSelectedProgramItem(arg){
+              this.searchLogic = arg
+
+         //  alert(arg);
+          },
+
+
+          OnClicked(arg){
+              this.searchLogic = arg
+          },
+
+          imageLoadError(event){
+    event.target.src = "https://researchers.hcc.musc.edu/images/photos/noimageavailable.jpeg"
+  },
+    
+
+    getEmailAddress(arg){
+      self = this
+     axios
+    .get("https://adminapi20220513111902.azurewebsites.net/api/ResearcherGetEmail/" + arg)
+
+    .then(res => {         
+    
+     let EMAIL_ADDRESS = JSON.parse(res.data);
+  
+     console.log(EMAIL_ADDRESS.RESEARCHERSEMAIL[0].EMAIL);
+
+     let part= EMAIL_ADDRESS.RESEARCHERSEMAIL[0]
+
+     this.loadSelectedResearcher_parent(part)
+
+
+    
+        console.log(arg)
+        })
+      .catch(err => {
+        console.log(err);
+        alert('An error has occured and the Administrator has been notified loadResearchersList')
+        // console.log(err);
+      });
+    
+
+    } ,  
+    
+    async loadAllResearchersList(arg){     
+   self = this
+    await axios
+    .get("https://adminapi20220513111902.azurewebsites.net/api/ResearchersList")
+
+    .then(res => {  
+     self.RESEARCHERSLIST = JSON.parse(res.data);
+         console.log(self.RESEARCHERSLIST)
+
+
+        console.log(self.RESEARCHERSLIST);
+        console.log(arg)
+
+        })
+      .catch(err => {
+        console.log(err);
+        alert('An error has occured and the Administrator has been notified loadResearchersList')
+        // console.log(err);
+      });
+    
+        this.showSpinner = false
+        this.searchLogic = urlParams.get('arg')
+    
+          },
+
+  async loadResearchersList(arg){
+    if (arg ==='LEADERSHIP'){
+      this.showSpinner = false
+    //  self.RESEARCHERSLIST = []
+     this.searchLogic = "LEADERSHIP"
+     // this.selectedRESEARCHERSLIST 
+
+
+ //  axios.get('.//dist//files//MembersData.json')
+ // .then((response) => response.json())
+  //.then((json) => console.log(json));
+ // console.log("http")
+  //  this.loadResearchersList("ALL")
+
+     axios.get('MembersData.json').then(res => {  
+      //  this.members = res.data.RESEARCHERSLIST
+      //  console.log(res)
+     //   console.log( this.members)
+     
+        this.RESEARCHERSLIST = res.data
+        console.log( this.RESEARCHERSLIST)
+
+        }).catch(err=> {
+          console.log(err);
+        })
+
+  //      this.loadResearchersList("ALL")
+
+// console.log(this.members)
+//console.log("Members")
+// this.RESEARCHERSLIST = this.members
+     } else {
+    return;
+   self = this
+    await axios
+    .get("https://adminapi20220513111902.azurewebsites.net/api/ResearchersList")
+
+    .then(res => {  
+      
+     // let researcher_Data = JSON.parse(res.data);
+     // self.RESEARCHERSLIST = researcher_Data.RESEARCHERSLIST 
+  
+     
+     self.RESEARCHERSLIST = JSON.parse(res.data);
+
+         console.log(self.RESEARCHERSLIST)
+
+    //  if(self.RESEARCHERSLIST.CANCER_FOCUS.length > 0 ){
+    //     this.CANCER_FOCUS.push({ITEM:1,DATA: self.ESEARCHERSLIST.CANCER_FOCUS} )
+    //  }
+   
+
+    
+
+   //  this.searchLogic = "LEADERSHIP"
+ //    this.searchLogic = "Name_Search"
+ //    this.search_last_name = "Carpen"
+     
+  
+      //  this.selectedRESEARCHERSLIST = researcher_Data.RESEARCHERSLIST 
+      // this.researcher =  researcher_Data.RESEARCHERDATA[0] ;
+        console.log(self.RESEARCHERSLIST);
+        console.log(arg)
+
+        })
+      .catch(err => {
+        console.log(err);
+        alert('An error has occured and the Administrator has been notified loadResearchersList')
+        // console.log(err);
+      });
+    
+        this.showSpinner = false
+    }
+          },
+
+        hasTabData(arg){
+          if(arg ==="Video"){
+            if(this.new_researchers[0]){
+                 if (this.new_researchers[0].VIDEO.length > -1){
+                return true
+             } else 
+             { return false} 
+            }
+         
+          }
+        
+
+     
+        },
+          queryCellInfoEvent: function(args) {
+          //console.log(args)
+      //new Tooltip(
+      //  {
+         // content: args.cell.column.headerText
+      //  },
+     //   args.node
+   //  );
+    }, 
+    
+references: function(field, data, column){
+  if(data["references"] !=""){
+  return data["references"].length
+  }
+},
+    formatDate(arg){
+     
+        var dt = new Date(arg);
+          var dtm = dt.getMonth();
+          var dty = dt.getFullYear();
+          return this.padTo2Digits(dtm) + "/" + dty 
+   
+    },
+    padTo2Digits (num) {
+     return num.toString().padStart(2, '0');
+     },
+
+
+      formatDollar (num) {
+ if(num){
+    return "$" + num
+    .toString()
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+ } else {
+  return "N/A"
+ }
+   
+    }     ,
+
+      refresh(){
+     //    this.$forceUpdate() ; 
+    
+     // _altmetric_embed_init();
+      //   this.isLoading = false;
+     //  _altmetric_embed_init(document.getElementById('selectedPubs'));
+   //    _altmetric_embed_init('#selectedPubs');
+       console.log("refresh") 
+          },
+
+  
+
+    
+      tabChange(arg){
+       // this.$bvModal.show(this.modal-1)
+     //   this.$refs['my-modal'].show()   
+     
+     if(arg ==="worksheet"){
+      //   this.searchPubMed();
+
+     }
+     if (arg === "interest"){
+         this.Get_Counts("mesh");
+     }
+    
+    if (arg==="links"){
+
+    }
+  if (arg ==="grants"){
+  //this.loadGrants()
+
+}
+if (arg==="selectedPubs"){
+  _altmetric_embed_init(document.getElementById('selectedPubs'));
+  _altmetric_embed_init('#selectedPubs');
+  console.log("selectedPubs")
+}
+
+if (arg ==="metrics"){
+   var grid = this.$refs.gridScopus.ej2Instances;
+           grid.datasource = this.allpublicationData
+           grid.refresh();
+
+}
+
+    
+       
+      //  this.$forceUpdate() ; 
+      //    _altmetric_embed_init() 
+      },
+      selectedNewProfile(arg){
+        //alert(arg.EMAIL)
+        if(arg.EMAIL === "rockey@musc.edu"){
+        //  this.step = 3           
+          window.location.href = "http://localhost:8080/?id=0"; 
+       //  window.location.href = "https://researchers.hcc.musc.edu/?id=0"; 
+        this.step = 2      
+        }
+
+        if(arg.EMAIL === "rojewski@musc.edu"){
+        //  this.step = 4           
+          window.location.href = "http://localhost:8080/?id=1"; 
+        //window.location.href = "https://researchers.hcc.musc.edu/?id=1";
+       // this.step = 4       
+        }
+
+        if(arg.EMAIL === "rblanco@musc.edu"){
+          this.step = 4           
+          window.location.href = "http://localhost:8080/?id=2";
+        // window.location.href = "https://researchers.hcc.musc.edu/?id=2"; 
+         //this.step = 4       
+        }
+
+        if(arg.EMAIL === "rosenza@musc.edu"){
+          this.step = 4           
+          window.location.href = "http://localhost:8080/?id=3"; 
+        // window.location.href = "https://researchers.hcc.musc.edu/?id=3";
+        // this.step = 4       
+        }
+
+      },
+      selectedSearch(){
+          this.showSearch = true
+          this.showProfile = false
+          this.showMemberIDProfile = false
+      },
+
+
+  //    selectedProfile(arg){
+  //     this.showSearch = false
+  //     this.showProfile = true
+
+    
+
+  //   },
+
+    loadSelectedResearcher_parent(arg){
+     // this.selectedmembersname = 'rockey'
+     // this.membername = 'rockey' 
+   //  this.$refs.section.scrollTo(0, 0);window.scrollTo(0, 0);
+   let splitName = arg.EMAIL.split('@')
+   // this.$router.push('/ProfilePageOriginal')
+    const routePath = 'ProfilePage';
+    const params = { id: splitName[0] };
+     // let id = splitName[0]
+      // Navigate to the target page with parameters
+     // this.$router.push({ path: routePath, params });
+      this.$router.push({ name: routePath, params });
+
+    
+
+   //this.$router.push('/ProfilePage')
+   //this.$router.push({path: '/ProfilePage'})
+   return
+  // let splitName = arg.EMAIL.split('@')
+    
+ //  let url = "localhost:8080/?id=" & splitName[0]
+ //  console.log(url)
+
+ //  window.open("localhost:8080/?id=" & splitName[0],"_self" );  
+  // return
+  // localhost:8080/?id=carpente
+
+      window.scrollTo(0, 0);     
+
+     // this.$router.replace('/')
+   
+      this.selectedmembersname =  splitName[0]
+      this.showProfile = true
+      this.showSearch = false
+      this.showProfile = true
+      this.showBack = true
+     
+
+    },
+
+    loadSelectedResearcher_email(arg){
+     // this.selectedmembersname = 'rockey'
+     // this.membername = 'rockey'  
+     this.$router.replace('/')
+     //let splitName = arg.EMAIL.split('@')
+   
+      this.selectedmembersname =  arg //'carpente' // splitName[0]
+      this.showProfile = true
+      this.showSearch = false
+      this.showProfile = true
+      this.showBack = true
+     
+
+    },
+
+   load_NIH_Reporter(arg){
+        let NIH_ID = this.new_researchers[0].NIH_REPORTER_ID
+         var self = this;
+          axios.get('https://adminapi20220513111902.azurewebsites.net/api/NIH_Reporter/' + arg + '/project_nums_URL')
+           .then(res => {         
+           let NIH_URL= res.data.results;
+           console.log(NIH_URL[0]["project_detail_url"])       
+           let  project_detail_url = NIH_URL[0]["project_detail_url"]          
+           let route = this.$router.resolve({ path: project_detail_url});
+           window.open(project_detail_url, '_blank');
+      
+  })
+  .catch(error => {
+   this.isLoading = false;
+
+   if (error.response) {
+        // Request made but the server responded with an error
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        // Request made but no response is received from the server.
+        console.log(error.request);
+    } else {
+        // Error occured while setting up the request
+        console.log('Error', error.message);
+    }
+   
+  })      
+
+      },
+load_NIH_Reporter_X(arg){
+//http://localhost:54269/api/NIH_Reporter/P30%20DK123704/project_nums_URL
+
+
+console.log(encodeURI('https://adminapi20220513111902.azurewebsites.net/api/NIH_Reporter/' + arg + '/project_nums_URL'))
+   axios.get(encodeURI('https://adminapi20220513111902.azurewebsites.net/api/NIH_Reporter/' + arg + '/project_nums_URL'))         
+          .then(res => {        
+       let NIH_url= res.results;
+    //onsole.log(url[0]["project_detail_url"])
+    console.log(NIH_url)
+          
+     }
+    
+     )  .catch(error => {
+            if (error.response) {
+        // Request made but the server responded with an error
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        // Request made but no response is received from the server.
+        console.log(error.request);
+    } else {
+        // Error occured while setting up the request
+        console.log('Error', error.message);
+    }
+   
+  })       
+
+},
+   
+
+ ALL_Pubs_iCite (arg){       
+            var self = this;           
+    let pmidList = arg
+        
+          axios.get('https://icite.od.nih.gov/api/pubs?pmids=' + pmidList )
+       .then(res => {         
+        
+       self.iCitepublicationData =  res.data.data
+         
+        })
+        .catch(error => {
+            if (error.response) {
+        // Request made but the server responded with an error
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        // Request made but no response is received from the server.
+        console.log(error.request);
+    } else {
+        // Error occured while setting up the request
+        console.log('Error', error.message);
+    }
+   
+  })       
+     },
+     ALL_Pubs_Scopus (issn_list){       
+            var self = this;           
+          console.log(this.issnList)
+         let scopusData=[]
+          
+       axios.get('https://api.elsevier.com/content/serial/title?issn=' + issn_list +'&view=CITESCORE&date=2018-2025&apiKey=8aabc36477b83cb915c07729b76a2a40&httpAccept=application/json' )
+       .then(res => {         
+        
+       scopusData =  res.data["serial-metadata-response"]   //.entry
+      for (var i = 0; i < scopusData.entry.length; i++) {
+        console.log("scopus ok")
+      }
+
+         
+        })
+        .catch(error => {
+            if (error.response) {
+        // Request made but the server responded with an error
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        // Request made but no response is received from the server.
+        console.log(error.request);
+    } else {
+        // Error occured while setting up the request
+        console.log('Error', error.message);
+    }
+   
+  })       
+     },
+    ALL_Pubs_scopus_x (arg){       
+            var self = this;
+       axios.get('https://adminapi20220513111902.azurewebsites.net/api/eSummary_iCite_Scopus/scopus/' + arg)         
+          .then(res => {
+          self.scopusData = res.data;
+         
+         
+        })
+        .catch(error => {
+            if (error.response) {
+        // Request made but the server responded with an error
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        // Request made but no response is received from the server.
+        console.log(error.request);
+    } else {
+        // Error occured while setting up the request
+        console.log('Error', error.message);
+    }
+   
+  })       
+     },
+
+
+
+    async jsFunctionProfile (arg){
+      // let pubString = ""; 
+      // this.isLoading=true;
+    
+         var self = this;
+      
+
+    //  this.BIOGRAPHY = bio       
+         //this.selectedPublications = arg.PMIDS
+
+      //  await this.Load_Publications(arg.PMIDS);
+        // this.step = 1
+
+  //   axios.get('https://adminapi20220513111902.azurewebsites.net/api/formattedpubs/' + self.new_researchers[0].SELECTED_PMIDS)
+    
+    axios.get('https://adminapi20220513111902.azurewebsites.net/api/eSummary_iCite_Scopus/eFetch/' + self.new_researchers[0].SELECTED_PMIDS)
+    .then(res => { 
+          
+        
+   self.publicationData= res.data; 
+       
+        
+       
+  })
+  .catch(error => {
+   this.isLoading = false;
+
+   if (error.response) {
+        // Request made but the server responded with an error
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        // Request made but no response is received from the server.
+        console.log(error.request);
+    } else {
+        // Error occured while setting up the request
+        console.log('Error', error.message);
+    }
+   
+  })      
+      } ,  
+
+      loadGrants(){
+        let NIH_ID = this.new_researchers[0].NIH_REPORTER_ID
+       // console.log(NIH_ID);
+
+          var self = this;
+
+          
+          axios.get('https://restapi20201222154839.azurewebsites.net/api/NIH_Reporter/' + NIH_ID + '/pi_profile_ids_current_filtered')
+        //  axios.get('https://adminapi20220513111902.azurewebsites.net/api/NIH_Reporter/' + NIH_ID + '/pi_profile_ids_current_filtered')
+      //  axios.get('http://localhost:54269/api/NIH_Reporter/' + NIH_ID + '/pi_profile_current_filtered')
+       .then(res => {         
+        
+      self.fundingData =  res.data.results.filter((value, index, self) => self.findIndex(v => v.project_serial_num === value.project_serial_num) === index);
+
+        //  self.fundingData= res.data.results; 
+       
+        
+       
+  })
+  .catch(error => {
+   this.isLoading = false;
+
+   if (error.response) {
+        // Request made but the server responded with an error
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+    } else if (error.request) {
+        // Request made but no response is received from the server.
+        console.log(error.request);
+    } else {
+        // Error occured while setting up the request
+        console.log('Error', error.message);
+    }
+   
+  })      
+
+      },
+
+      pubMedXML(pmidList, mode) {
+    
+      var pmidArr = pmidList.split(',') // this.new_researchers[0].SELECTED_PMIDS.split(',');
+      var uniq = [ ...new Set(pmidArr) ]     
+
+      uniq.sort(function(a, b) {
+            return b - a;
+          }); 
+
+    if (uniq.length > 15){
+       uniq.length = 15
+     }
+     
+
+      let pmid = uniq.join(",")
+      let issn_List ='';
+      
+      var self = this;
+    this.articles = [];
+   
+        axios.get(
+            "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&retmode=xml&id=" +
+            pmid +
+            "&api_key=d0784f454c4ca9a3cb738d33f97b4ae34808"
+        )
+        .then(response => {
+            const parser = new DOMParser();
+            const xmlDOM = parser.parseFromString(response.data, "text/xml");
+            const getPubmedArticles = xmlDOM.querySelectorAll('PubmedArticle')
+            for (var i = 0; i < getPubmedArticles.length; i++) {
+                let tag = getPubmedArticles[i];
+                //PMID
+              
+                let PMID = "";
+                let PMCID = "";
+                let DOI = "";
+                if (tag.querySelector('PMID')) {
+                    PMID = tag.querySelector('PMID').textContent;
+                }
+
+               // console.log(PMID);
+
+
+                //Title
+                let Title = ""
+                if (tag.querySelector('Article').querySelector("Title")) {
+                    Title = tag.querySelector('Article').querySelector("Title").textContent;
+                }
+
+                //ArticleTitle
+                let ArticleTitle = ""
+                if (tag.querySelector('Article').querySelector("ArticleTitle")) {
+                    ArticleTitle = tag.querySelector('Article').querySelector("ArticleTitle").textContent;
+                }
+
+                let ISSN = ""
+                if (tag.querySelector('Article').querySelector("ISSN")) {
+                    ISSN = tag.querySelector('Article').querySelector("ISSN").textContent;
+                    issn_List += issn_List + ","
+                }
+                 
+
+
+
+
+
+               // console.log(ArticleTitle);
+
+                //AuthorList
+                let AuthorList = ""
+                let authorXML = ""
+                if (tag.querySelector('Article').querySelector('AuthorList').querySelectorAll("Author")) {
+                    AuthorList = tag.querySelector('Article').querySelector('AuthorList').querySelectorAll("Author");
+                    authorXML = tag.querySelector('Article').querySelector('AuthorList').outerHTML
+                }
+
+                let AuthorString = "";
+                for (let j = 0; j < AuthorList.length; j++) {
+                    if (AuthorList[j].querySelector('LastName')) {
+                        AuthorString += AuthorList[j].querySelector('LastName').textContent
+                    }
+
+                    if (AuthorList[j].querySelector('Initials')) {
+                        AuthorString += " " + AuthorList[j].querySelector('Initials').textContent
+                    }
+
+                    AuthorString += ", "
+                    //		AuthorString += AuthorList[j].querySelector('LastName').textContent + " " + AuthorList[j].querySelector("Initials").textContent + ", "
+
+                }
+
+                AuthorString = AuthorString.replace(/,\s*$/, "");
+              //  console.log(AuthorString);
+
+                let GrantList = [];
+                let GrantListData = [];
+                let NCI_GrantList = "";
+                let NON_NCI_GrantList ="";
+
+                if (tag.querySelector('Article').querySelector('GrantList')) {
+                    GrantList = tag.querySelector('Article').querySelector('GrantList').querySelectorAll("Grant");
+                }
+
+           
+
+                for (let j = 0; j < GrantList.length; j++) {
+                    let GrantID = "";
+                    let Acronym = "";
+                    let Agency = "";
+                    let Country = "";
+
+                    if (GrantList[j].querySelector('GrantID')) {
+                        GrantID = GrantList[j].querySelector('GrantID').textContent
+                    }
+
+                    if (GrantList[j].querySelector('Acronym')) {
+                        Acronym = GrantList[j].querySelector('Acronym').textContent
+                    }
+
+                    if (GrantList[j].querySelector('Agency')) {
+                        Agency = GrantList[j].querySelector('Agency').textContent
+                    }
+
+                    if (GrantList[j].querySelector('Country')) {
+                        Country = GrantList[j].querySelector('Country').textContent
+                    }
+                       if(Agency.includes("NIH")){
+                        NCI_GrantList = GrantID + "/" +Acronym + "/" + Agency +"/" + Country +  ", "
+                       } else {
+                        NON_NCI_GrantList = GrantID + "/" +Acronym + "/" + Agency +"/" + Country + ", "
+ 
+                       }
+                       
+                    //    NCI_GrantList
+                     GrantListData.push({
+                        GrantID: GrantID,
+                        Acronym: Acronym,
+                        Agency: Agency,
+                        Country: Country,
+                        NCI_GrantList: NCI_GrantList,
+                        NON_NCI_GrantList: NON_NCI_GrantList
+                        
+                   })
+                }
+
+                //abstract
+                 let abstractXML = ""
+                // if (tag.querySelector('Article').querySelector('Abstract')) {
+                //     abstractXML = tag.querySelector('Article').querySelector('Abstract').outerHTML
+                //     console.log(abstractXML)
+                // }
+            const abstracts = tag.querySelector('Article').querySelectorAll("AbstractText");
+          // let abstract_text = "";
+             abstracts.forEach(a => {
+            let tmpItem = [];
+            if (a.getAttribute("Label") !== null) {
+              //  abstract_text +=
+              //   "<b>" + a.getAttribute("Label") + "</b>: " + a.textContent;
+              tmpItem.title = "<br><b>" + a.getAttribute("Label") + "</b>";
+              abstractXML += "<br><b>" + a.getAttribute("Label") + ": </b>";
+              tmpItem.body = a.textContent;
+               abstractXML += a.textContent;
+            } else {
+              tmpItem.body = a.textContent;
+              tmpItem.title = "Abstract";
+               abstractXML += "<br><b>Abstract: </b>";
+                abstractXML +=a.textContent
+              
+            }
+         
+           });
+
+
+         //MeshHeadingList
+                let MeshHeadingList = []; 
+                let NCI_MeshTerms = ""             
+
+                if (tag.querySelector('MeshHeadingList')) {
+                    MeshHeadingList = tag.querySelector('MeshHeadingList').querySelectorAll("MeshHeading");
+                }
+
+             
+             for (let j = 0; j < MeshHeadingList.length; j++) {
+               //  if (KeywordList[j].querySelector('Keyword')) {
+                        NCI_MeshTerms += MeshHeadingList[j].textContent + ";"
+               //     }
+             }
+
+
+
+            //KeywordList 
+              let KeywordList = [];              
+
+                if (tag.querySelector('KeywordList')) {
+                    KeywordList = tag.querySelector('KeywordList').querySelectorAll("Keyword");
+                }
+
+             let NCI_KeyWords =""
+             for (let j = 0; j < KeywordList.length; j++) {
+               //  if (KeywordList[j].querySelector('Keyword')) {
+                        NCI_KeyWords += KeywordList[j].textContent + ";"
+               //     }
+             }
+
+            // console.log("NCI_KeyWords " + NCI_KeyWords)
+
+            //PublicationType
+              let PublicationTypeList = [];
+              let PublicationType = "";      
+
+              if (tag.querySelector('Article').querySelector('PublicationTypeList')) {
+                    PublicationTypeList = tag.querySelector('Article').querySelectorAll("PublicationTypeList");
+                }
+                  for (let j = 0; j < PublicationTypeList.length; j++) {
+                        
+
+                    if (PublicationTypeList[j].querySelector('PublicationType')) {
+                        PublicationType += PublicationTypeList[j].querySelector('PublicationType').textContent+", "
+                    }
+                  }
+          
+
+                //ISOAbbreviation
+                let ISOAbbreviation = ""
+                if (ISOAbbreviation = tag.querySelector('Article').querySelector('Journal').querySelector("ISOAbbreviation")) {
+                    ISOAbbreviation = tag.querySelector('Article').querySelector('Journal').querySelector("ISOAbbreviation").textContent;
+                }
+
+                //PudDate year and month
+                let PubDateYear = "";
+                if (PubDateYear = tag.querySelector('Article').querySelector('Journal').querySelector("JournalIssue").querySelector("PubDate").querySelector("Year")) {
+                    PubDateYear = tag.querySelector('Article').querySelector('Journal').querySelector("JournalIssue").querySelector("PubDate").querySelector("Year").textContent;
+                }
+           
+                let ArticleIdListData = [];
+                let PubmedData = tag.querySelector('PubmedData');
+                for (let obb of PubmedData.children) {
+                    if (obb.nodeName == "ArticleIdList") {
+                        for (let ArticleId of obb.children) {
+                            if (ArticleId) {
+                                ArticleIdListData.push({
+                                    IdType: ArticleId.getAttribute('IdType'),
+                                    value: ArticleId.textContent
+                                  
+                                })
+                                  if (ArticleId.getAttribute('IdType') =="pmc"){
+                                      PMCID = ArticleId.textContent
+                                  }
+                                   if (ArticleId.getAttribute('IdType') =="doi"){
+                                      DOI = ArticleId.textContent
+                                  }
+                            }
+                        }
+                        break;
+                    }
+
+                }
+
+              let article = {};
+              article["PMID"] = PMID;
+              article["Title"] = ArticleTitle
+              article["FullJournalName"] = Title
+              article["Authors"] = AuthorString
+              article["Abstract"] = abstractXML
+              article["pubYear"] = PubDateYear
+              article["PMCID"] = PMCID
+              article["DOI"] = DOI
+              article["NCI_MeshTerms"] = NCI_MeshTerms
+              article["NCI_KeyWords"] = NCI_KeyWords
+              article["NCI_GrantList"] = NCI_GrantList
+              article["NON_NCI_GrantList"] = NON_NCI_GrantList
+              article["PublicationType"] = PublicationType
+              article["GrantListData"] = GrantListData
+              article["ISSN"] = ISSN
+
+           
+
+            if (mode==='researcher'){
+
+                self.publicationData.push(article) 
+               //   self.ALL_Pubs_Scopus(issn_List);
+            } 
+            
+            if (mode ==='searchQuery') {
+            self.searchQuery.push(article) 
+
+            }
+               
+               
+               
+
+                // let subArr = this.publicationDATA.filter(object => object.PMID === PMID)
+             
+                           
+                //  for (var ii = 0; ii < subArr.length; ii++) {
+               
+                // let status = subArr[ii]["New"]
+                // let inter = subArr[ii]["InterProgramatic"]
+                // let intra = subArr[ii]["IntraProgramatic"]
+                // let multi = subArr[ii]["MultiInstitutional"]
+                // let accepted = subArr[ii]["Accepted"]
+                // let member = subArr[ii]["Member"]
+
+                // let rejected = subArr[ii]["Rejected"]
+                // let cancerrelevent = true
+                // if (subArr[ii]["Acronym"].trim() == 'NR' || subArr[ii]["Acronym"].trim() == 'NC' || subArr[ii]["Acronym"].trim() == '') {
+                //     cancerrelevent = false
+                // }
+
+                // let article = {};
+ 
+                // article["Member"] = member;
+                // article["New"] = status;
+                // article["PMID"] = PMID;
+                //  article["PMCID"] = PMCID;
+                //   article["DOI"] = DOI;
+                // article["NotMine"] = rejected;
+                // article["CancerRelevant"] = cancerrelevent;
+                // article["Mine"] = accepted;
+                // article["pubdate"] = PubDateYear;
+                // article["MultiInstitution"] = multi;
+                // article["ISOAbbreviation"] = ISOAbbreviation;
+                // article["ArticleTitle"] = ArticleTitle;
+                // //   article["MultiProgram"] = multi;  
+                // article["Shared"] = "";
+                // article["Inter"] = inter;
+                // article["Intra"] = intra;
+                // article["authorsXML"] = authorXML;
+                // article["abstractXML"] = abstractXML;
+                // article["ArticleIdList"] = ArticleIdListData; //[{IdType: "pubmed", value: pubmed},{IdType: "pii", value: pii},{IdType: "doi", value: doi},{IdType: "pmc", value: pmc},{IdType: "mid", value: mid}]
+                // article["GrantList"] = GrantListData;
+                // article["comments"] = "";
+
+                // article["data"] = AuthorString + ". <b>" + ArticleTitle + "</b><i> " + ISOAbbreviation + "</i> " +
+                //     " <font color='Red'><b>" +
+                //     ((PubDateYear == "") ? "" : PubDateYear) + " " + ((PubDateMonth == "") ? "" : PubDateMonth) + " " + ((PubDateDay == "") ? "" : PubDateDay) + "</b></font> " +
+
+                //     "DOI:" + DOI + ((PMCID=="") ? "": " PMCID: " + PMCID ) + " PMID:" + PMID;
+
+                // this.articles.push(article)
+
+                //  } 
+
+            } //for (var i = 0; i < getPubmedArticles.length; i++) 
+        //    let y = this.articles
+
+          //  var grid = this.$refs.pubGrid.ej2Instances;
+          //      grid.refresh();  article
+
+        //self.publicationData.push(article) // = res.data; 
+        //    console.log("Processed " + pmid)
+         
+      
+        })
+        .catch(err => {
+            alert(err)
+        })
+
+
+},
+
+
+//runQuery
+   searchPubMed(){  
+    axios.get(
+        'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?',
+         {
+             params:{
+                 db:'pubmed',
+                 api_key: 'd0784f454c4ca9a3cb738d33f97b4ae34808',
+                 retmode: 'json',
+                 retmax: 500,
+                 datetype: 'pdat',
+                 reldate: 10,
+                 term: '(Medical University of South Carolina[Affiliation] OR MUSC[Affiliation] OR Hollings Cancer Center[Affiliation]'
+             }
+         }
+           ).then(response => {            
+                let ids = response.data.esearchresult.idlist;
+                let arr = ids.sort(function(a, b){return b-a}).slice(0,5);
+         //  this.searchQuery = response.data.esearchresult.idlist;
+
+      this.pubMedXML(arr.join(), 'searchQuery')
+
+
+      }).catch(error => {
+       console.log(error.response)
+      })
+
+ 
+
+        },
+
+
+
+       pubMedeSummary(){ 
+           var self = this;
+          this.allpublicationData = [];
+       var pmidArr =  this.new_researchers[0].SELECTED_PMIDS.split(',');
+       var uniq = [ ...new Set(pmidArr) ]    
+
+      uniq.sort(function(a, b) {
+            return b - a;
+          }); 
+        if (uniq.length > 25){
+            uniq.length = 25
+          }
+     
+      let pmid_list = uniq.join(",")
+
+        let getJSONLink = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?'       
+         getJSONLink += 'db=pubmed&api_key=d0784f454c4ca9a3cb738d33f97b4ae34808&retmode=json&id=' + pmid_list        
+            axios.get(getJSONLink)
+             .then(res => { 
+               let jsonObj = res.data.result;               
+               delete jsonObj.uids;        
+               const articles = [];
+               const articlesShort = [];           
+               for (const prop in jsonObj) {
+              if (!jsonObj.hasOwnProperty(prop)) continue; 
+      
+            const pubdate = jsonObj[prop].sortpubdate; 
+   
+            let data = {}; 
+            data["year"] = jsonObj[prop]["pubdate"].slice(0,4) 
+            data["uid"] = prop;
+            data["pmid"] = prop;
+            data["pmc"] ="";
+            data["title"] = jsonObj[prop]["title"];
+            data["source"] = jsonObj[prop]["source"];   
+            data["issn"] = jsonObj[prop]["issn"];   
+            data["essn"] = jsonObj[prop]["essn"];   
+
+         
+
+           
+          
+                if (jsonObj[prop]["authors"].length < 50 ){
+             data["all_authors"] = jsonObj[prop]["authors"]
+              .map(author => {                
+                 return author["name"] ;                
+              })
+              .join(", ");          
+         
+            } else {
+            let authorName =''   
+              data["all_authors"] =jsonObj[prop]["authors"][0]["name"] +", " +jsonObj[prop]["authors"][1]["name"] + ", " + authorName + ",  et al"
+            }
+
+          
+
+
+          
+               
+            let pubType ="";
+           for (const pubtypes of jsonObj[prop]["pubtype"]) {
+               pubType += pubtypes + " ";             
+            }
+            data["pubtype"] = pubType;
+
+           for (const articleid of jsonObj[prop]["articleids"]) {
+              if (articleid["idtype"] === "pmc") {
+                data["pmc"] = articleid["value"];
+                break;
+              }
+            }
+            
+         
+           // console.log(formatedAuthors);
+          //  data["publication"]  =
+            //  data["authors"] +
+          //  formatedAuthors +
+              ". " +             
+           //   data["title"] + " <i>" + data["source"] +
+           //   "</i> "  +  pubdate.substring(0,4)+ " "
+           //    + (data["volume"] ? data["volume"] : "") +
+           //     (data["issue"] ? "(" + data["issue"] + ")" : "") +
+            //    (data["pages"] ? ":" + data["pages"] + ". " : " ") +
+               // (data["pmcrefcount"] ? "<b> PMC Citation Count: " + data["pmcrefcount"] + "</b>. " : " ") + 
+              //  (data["pubtype"] ? " Publication Type: " + data["pubtype"] + ". " : " ") + 
+             //   (data["pmid"]  ? " PMID: " + data["pmid"] : "") +
+           //     (data["pmc"]  ? "; PMCID:" + data["pmc"]  + "." : ".");
+
+                //  if (data["year"] === "2021"){
+              
+                 self.allpublicationData.push(data)
+                
+            //   } //=2021
+                  }   
+             })
+       
+         //  console.log(self.allpublicationData)
+
+          
+
+
+      this.$forceUpdate() ; 
+ },
+
+      Get_Counts(arg){
+        this.cloud_words = [];
+      let words= ""
+        
+
+    //    this.word.push(text: "Vue", value: 1000)
+    
+       for (var i = 0; i < this.publicationData.length; i++) { 
+        if(this.publicationData[i]["NCI_MeshTerms"] ){
+          words += this.publicationData[i]["NCI_MeshTerms"] 
+        }
+            if(this.publicationData[i]["NCI_KeyWords"]){
+               words += this.publicationData[i]["NCI_KeyWords"] 
+            }
+           
+          }
+
+         for (var i = 0; i < this.fundingData.length; i++) { 
+          if(this.fundingData[i]["pref_terms"]){
+             words += this.fundingData[i]["pref_terms"]
+          }
+              
+          }
+
+
+
+
+          const arr = words.split(';')
+       //   console.log(words)
+        let unique_words = [...new Set(arr)]
+     //    console.log(unique_words.length)         
+         words += ";"
+         for (var i = 0; i < unique_words.length; i++) {         
+         var word = unique_words[i];
+         var regex = new RegExp(  word + ';' , 'g' ,'i');
+         var count =   words.match(regex).length;
+
+         // this.words.push({text:" + word + ",value:" + count +"});
+
+
+
+          this.cloud_words.push({text: word, value: count})
+
+         //console.log(word + ' ' + count);
+        // console.log(this.cloud_words)
+        }     
+              console.log(this.cloud_words)
+      
+      },
+
+        sleep(ms) {
+      //makes whoever called sleep for milliseconds specified in ms
+      return new Promise((resolve) => setTimeout(resolve, ms));
+    },
+
+    },
+    
+    created(){  
+    //  window.addEventListener('scroll', this.handleScroll);
+
+      let urlParams = new URLSearchParams(window.location.search)
+    
+    //  if (urlParams.has('id') === true || urlParams.has('ID') === true ){
+       //  alert(urlParams.get('id'))
+
+       
+      // this.searchLogic = "Email_PART_Search"
+      // this.search_last_name = urlParams.get('id')
+
+    //  }
+
+    
+
+   // if (urlParams.has('id') === true ){
+  //    this.MemberID = urlParams.get('id')
+ 
+   // this.loadSelectedResearcher_email(this.MemberID)
+    
+    //  return;
+   // } else {
+   //   this.loadAllResearchersList("ALL")
+   // }
+
+
+
+    // if (urlParams.has('MemberID') === true ){
+    //   this.MemberID = urlParams.get('MemberID')
+    // // alert(this.MemberID)
+    //   this.showProfile = false
+    //   this.showMemberIDProfile = true
+    //   this.showSpinner = false
+    //   this.showSearch = false
+    //   this.showBack = true
+    
+    //   return;
+    // }
+
+    if (urlParams.has('ProgramID') === true ){
+      this.loadAllResearchersList("ALL")
+      this.searchLogic = urlParams.get('ProgramID')
+   //   this.getSelectedProgramItem(this.searchLogic)
+    // alert(this.searchLogic)
+       this.showProfile = false
+    //   this.showMemberIDProfile = true
+       this.showSpinner = false
+       this.showSearch = true
+      // this.showBack = true
+    
+      return;
+    }
+    if (urlParams.has('id') === true ){
+    //  if (urlParams.has('MemberID') === true ){
+        //  this.MemberID = urlParams.get('MemberID')
+        this.MemberID = urlParams.get('id')
+        this.search_last_name = urlParams.get('id')
+          self = this
+         // this.$router.replace({'query': null});
+          
+     axios
+    .get("https://adminapi20220513111902.azurewebsites.net/api/ResearchersList")
+
+    .then(res => {  
+      
+     // let researcher_Data = JSON.parse(res.data);
+     // self.RESEARCHERSLIST = researcher_Data.RESEARCHERSLIST 
+  
+     self.RESEARCHERSLIST = JSON.parse(res.data);
+     console.log(self.RESEARCHERSLIST)
+     //self.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LEADERSHIP);
+     console.log(self.search_last_name.toLowerCase())
+     this.selectedRESEARCHERSLIST = self.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.EMAIL.toLowerCase().indexOf(self.search_last_name.toLowerCase()) !== -1 );
+     this.searchLogic = "Email_PART_Search"
+    //this.searchLogic = "MemberID_Search"
+   //  this.searchLogic = "LEADERSHIP"
+    // this.searchLogic = "Query_Search"
+   
+   
+     this.search_last_name = ""
+     this.search_last_name_hidden = ""
+  
+        this.selectedRESEARCHERSLIST = researcher_Data.RESEARCHERSLIST 
+      // this.researcher =  researcher_Data.RESEARCHERDATA[0] ;
+  //   console.log(self.RESEARCHERSLIST);
+     //   console.log(arg)
+
+        })
+      .catch(err => {
+        console.log(err);
+        alert('An error has occured and the Administrator has been notified loadResearchersList')
+        // console.log(err);
+      });
+          //  alert( this.MemberID)
+      } else {
+
+     //   axios.get('https://researchers.hcc.musc.edu/MembersData.json').then(res => { 
+      //  axios.get('MembersData.json').then(res => {  
+      //   this.members = res.data.RESEARCHERSLIST
+      //   console.log(res)
+      //   console.log( this.members)
+      //   this.searchLogic === "CC"
+
+      //   return this.members.filter(item => item.PROGRAM === "Cancer Control");
+
+      //   }).catch(err=> {
+      //     console.log(err);
+      //   })
+
+
+
+       this.searchLogic = "LEADERSHIP"
+        this.loadResearchersList("LEADERSHIP");
+     //   this.searchLogic = "CC"
+    //    this.loadResearchersList("CC");
+      }
+     
+    
+
+    
+     
+
+    },
+    computed: {        
+
+      selectedRESEARCHERSLIST(){  
+        if (this.searchLogic === "LEADERSHIP"){
+          this.search_results = "Hollings Leaders"
+          console.log(this.leaders.LEADERSHIPDATA)
+          return this.leaders.LEADERSHIPDATA
+      }
+
+      if (this.searchLogic === "CC"){
+          this.search_results = "SEARCH RESULTS FOR CANCER CONTROL"
+          //console.log(this.leaders.LEADERSHIPDATA)
+          return this.members.filter(item => item.PROGRAM === "Cancer Control");
+        //  return this.members
+      }
+
+      if (this.searchLogic === "CBI"){
+          this.search_results = "SEARCH RESULTS FOR CANCER BIOLOGY IMMUNOLOGY"
+          //console.log(this.leaders.LEADERSHIPDATA)
+          return this.members.filter(item => item.PROGRAM === "Cancer Biology & Immunology");
+        //  return this.members
+      }
+
+      if (this.searchLogic === "DCT"){
+          this.search_results = "SEARCH RESULTS FOR DEVELOPMENTAL CANCER THERAPEUTICS"
+          //console.log(this.leaders.LEADERSHIPDATA)
+          return this.members.filter(item => item.PROGRAM === "Developmental Cancer Therapeutics");
+        //  return this.members
+      }
+
+
+    //  if (this.searchLogic === "LEADERSHIP"){          
+    //   if (typeof this.RESEARCHERSLIST.RESEARCHERSLIST!== 'undefined' ) {  
+    //     if( this.RESEARCHERSLIST.RESEARCHERSLIST.ITEM = "LEADERSHIP"){
+    //       this.search_results = "SEARCH RESULTS FOR LEADERSHIP"
+    //       console.log(this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LEADERSHIP))
+    //         return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LEADERSHIP);
+    //     }  else {
+    //       this.search_results = "SEARCH RESULTS FOR LEADERSHIP"
+    //        this.RESEARCHERSLIST.RESEARCHERSLIST = [];
+    //       return this.RESEARCHERSLIST.RESEARCHERSLIST
+    //     }       
+    //     }
+    //   }
+      if (this.searchLogic === "ALL"){
+          this.search_results = "SEARCH RESULTS FOR ALL"
+          return this.RESEARCHERSLIST.RESEARCHERSLIST
+      }
+      if (this.searchLogic === "Cancer_Control"){
+          this.search_results = "SEARCH RESULTS FOR CANCER CONTROL"
+          return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.PROGRAM === "Cancer Control");
+      }
+
+      if (this.searchLogic === "Developmental_Cancer_Therapeutics"){
+          this.search_results = "SEARCH RESULTS FOR DEVELOPMENTAL CANCER THERAPEUTICS"
+          return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.PROGRAM === "Developmental Cancer Therapeutics");
+
+
+      }
+
+      if (this.searchLogic === "Cancer_Biology_Immunology"){
+          this.search_results = "SEARCH RESULTS FOR CANCER BIOLOGY & IMMUNOLOGY"
+          return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.PROGRAM === "Cancer Biology & Immunology");
+      }
+
+      if (this.searchLogic === "Email_PART_Search"){
+          this.search_results = "SEARCH RESULTS FOR"
+          this.showSpinner = false
+          return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.EMAIL.toLowerCase().indexOf(this.search_last_name.toLowerCase()) !== -1 );
+      }
+
+      if (this.searchLogic === "MemberID_Search"){
+          this.search_results = "SEARCH RESULTS FOR"
+
+         // let email =  this.getEmailAddress(117);
+
+      // console.log(Number(this.MemberID) )
+
+    //  alert(this.MemberID )
+
+          return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.MEMBERID == this.MemberID);
+      }
+
+
+
+      if (this.searchLogic === "Name_Search"){
+        //  let output = this.search_last_name.toLowerCase();
+        //  return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(fnd =>fnd.LAST_NAME.toLowerCase().startsWith("${output}"))
+         // return result;
+
+        // return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.PROGRAM === "Cancer Biology & Immunology");
+
+       //   return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LAST_NAME.startsWith("C") );
+
+        //  return item.toLowerCase().indexOf(searchCriteria.toLowerCase()) !== -1
+
+
+     //   return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(function(item) {
+         // this.search_last_name = "Angel"
+        //  const search = "angel" //this.search_last_name.toLowerCase()
+
+       //     return item.LAST_NAME.indexOf("Angel") !== -1
+
+      // let query= "Angel"
+
+     //  return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LASTNAME === query);
+     if (this.search_last_name.length < 3) {
+      this.search_results = "SEARCH RESULTS FOR NAME STARTS WITH"
+           return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LASTNAME.toLowerCase().startsWith(this.search_last_name.toLowerCase()) );
+
+     } else {
+      this.search_results = "SEARCH RESULTS FOR NAME INCLUDES"
+      return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LASTNAME.toLowerCase().indexOf(this.search_last_name.toLowerCase()) !== -1 );
+     }
+
+     
+
+//})
+      }
+      if (this.searchLogic === "Query_Search"){
+       
+     if (this.search_last_name_hidden.length < 3) {
+      this.search_results = "SEARCH RESULTS FOR NAME STARTS WITH"
+           return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LASTNAME.toLowerCase().startsWith(this.search_last_name_hidden.toLowerCase()) );
+
+     } else {
+      this.search_results = "SEARCH RESULTS FOR NAME INCLUDES"
+      return this.RESEARCHERSLIST.RESEARCHERSLIST.filter(item => item.LASTNAME.toLowerCase().indexOf(this.search_last_name_hidden.toLowerCase()) !== -1 );
+     }
+      }        
+
+
+      },
+
+    sortedLinks: function() {
+    function compare(a, b) {
+      if (a.ITEM < b.ITEM)
+        return -1;
+      if (a.ITEM > b.ITEM)
+        return 1;
+      return 0;
+    }
+
+    return this.linkItems.sort(compare);
+  }
+},
+
+   
+ 
+  
+    }
+  
+
+</script>
+
+
+<style scoped>
+btn-default:hover{
+  font-weight: bold !important;
+}
+
+myLink 
+{
+    color:#FFFFFF;
+    cursor:grab;
+    font-weight: bold !important;
+      
+}
+
+ a:link.myMainLink
+{
+  color:#0e0404;
+}
+
+a:visited.myMainLink
+{
+  color:#0e0404;
+}
+
+a:hover.myMainLink 
+{
+  color:#0e0404;
+}
+.grantlist {
+  display: flex;
+}
+
+.details-button {
+  padding-right: 0px !important; /* Remove default padding */
+  font-size: 14px;
+  max-width: 10% !important;
+  
+}
+
+/* h1 {
+  font-variant-caps: unicase;
+  color: rgb(0, 183, 255)
+} */
+
+.mainH1_{
+  font-weight: 600;
+        font-size: 28px;
+        border-bottom: solid 1px #444;        
+        color: #00447C;
+        padding-bottom: 8px;
+}
+
+.mainH3_{
+  font-weight: 600;
+        font-size: 24px;              
+        color: #00447C;
+        padding-bottom: 0px;
+}
+
+.mainH4_{
+  font-weight: 600;
+        font-size: 24px;              
+        color: #00447C;
+        padding-bottom: 0px;
+}
+
+
+    .results-left ol, .results-left ul {
+        list-style: none;
+        list-style-type: decimal;
+        padding-left: 15px;
+        margin-top: 0px;
+    }
+
+    .results-left h1 {
+        font-weight: 200;
+        font-size: 28px;
+        border-bottom: solid 1px #444;
+        text-transform: uppercase;
+        color: #00447C;
+        padding-bottom: 8px;
+    }
+    .person-info {
+        margin: 20px 0px 7px 0px;
+    }
+    
+    .person-info h5 {
+        color: #00447c;
+        font-size: 16px;
+    }
+    
+    .person-info hgroup {
+        border-bottom: solid 1px #e6e6e6;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .person-info hgroup h3 {
+        font-size: 21px;
+        float: left;
+    }
+    
+    .person-info hgroup h3 a {
+        color: #000;
+    }
+    
+    .person-info img {
+        border-radius: 4px;
+    }
+    
+    .person-info h5 {
+        color: #00447c;
+        font-size: 16px;
+    }
+    
+    .person-info .work {
+        font-size: 15px;
+    }
+    
+    .person-info .work li {
+        margin-top: 10px;
+    }
+    
+    .person-info .view-profile {
+        background: #f0f2f3;
+        font-size: 14px;
+        border: 1px solid #7a99ac;
+        padding: 4px 15px 3px;
+        border-radius: 4px;
+        margin-top: 15px;  
+        width: 150px;
+    }
+    .view-profile-btn{
+      background: #00447c !important;
+    }
+
+    view-profile-btn:hover {
+    color: #fff !important;
+      text-decoration: none !important;
+}
+
+
+  .view-profile:hover {
+    background-color: #7a99ac;
+    color: rgb(0, 0, 0);
+}
+    .person-info p a, .person-info p i {
+        color: #337ab7;
+    }
+    
+    .person-info p i {
+        margin-right: 5px;
+    }
+    
+    .person-info p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+  .single-person {
+  margin: 20px 0px 7px 0px;
+}
+.search-result-title {
+  margin: 0px 0px 7px 0px;
+}
+.search-result-title h5 {
+  color: #00447c;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.person-detail h3 {
+  font-size: 21px;
+  text-transform: uppercase;
+  margin-bottom: 30px !important;
+}
+.person-detail h3 a {
+  color: #000;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 10px;
+}
+.p-section h5 {
+  color: #00447c;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+.p-section p {
+  font-size: 15px;
+  color: #000;
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+.p-section .view-profile {
+  background: #7a99ac !important;
+  border: 1px solid #7a99ac !important;
+  padding: 4px 15px 3px;
+  border-radius: 4px;
+}
+.p-section-right p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.keyword-search h5 {
+  font-size: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: 400;
+  padding: 0 0 10px;
+  text-align: center;
+  margin: 0px 0 5px 0px !important;
+}
+
+.keyword-search-bar h5 {
+  font-size: 20px;
+  border-bottom: 1px solid #e6e6e6;
+  font-weight: 400;
+  padding: 0 0 10px;
+  text-align: left;
+  margin: 0px 0 5px 0px !important;
+}
+
+.search-btn {
+  font-style: normal;
+  font-size: 13px;
+  border-color: #aaa !important;
+  background-color: #efefef;
+  outline: none !important;
+  border: 1px solid transparent !important;
+  padding: 3px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.search-btn:hover {
+  border-color: #999 !important;
+  background-color: #e8e8e8 !important;
+}
+.alphabets {
+  background-color: #e6e6e6;
+  padding: 10px 10px;
+  margin-top: 15px;
+}
+.alphabets a {
+  display: inline-block;
+  color: #00447c;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 5px 3px;
+  border: none !important;
+}
+.profileFind-card-text {
+    background: #fff !important;
+    color: #fff !important ;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 18px !important;
+   }
+   button.btn.btn-primary2 {
+    width: 100%;
+    margin: 5px 0;
+    background: #b9dbe5;
+    border-color: #00447c;
+    color: #00447c;
+    padding: 6px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-weight: bold !important;
+}
+a:hover.nav-link
+{
+    /* color:#7a99ac !important; */
+    cursor:grab;
+    font-weight: bold !important;
+      
+}
+</style>
+

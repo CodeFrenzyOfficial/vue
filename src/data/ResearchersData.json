@@ -1,0 +1,593 @@
+{
+	"RESEARCHERSDATA": [
+    
+    
+    {
+		"IMAGEBK": "https://muschealth.org/MUSCApps/HealthAssets/ProfileImages/Rockey_Don_GI.jpg",
+        "IMAGE" :"https://researchers.hcc.musc.edu/images/rockey.jpg",
+		"PRIMARY_NAME": "DON C. ROCKEY, M.D.",
+		"SECONDARY_NAME": "",
+        "FIRST_NAME": "",
+		"LAST_NAME": "",
+		"MIDDLE_INITAL": "",		
+		"DEPARTMENT": "Medicine",
+		"ADDRESS" :"",
+		"PROGRAM": "Developmental Cancer Therapeutics",
+		"ACADEMIC_TITLE": "Professor",
+		"POSITIONS": [{
+            "ITEM":"Position One",
+            "DATA": "Position",
+            "ISSELECTED": false
+            }],
+        "EDUCATION_TRAINING": [
+                {
+                  "ITEM": "1988",
+                  "DATA": "The Johns Hopkins Hospital, Baltimore, MD Osler Med Intern/Residentx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "1985",
+                  "DATA": " University of Texas Health Science Center, San Antonio, TXx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "1981",
+                  "DATA": "University of Texas Southwestern Medical Center, Dallas, TX PhDx",
+                  "ISSELECTED": true
+                }
+              ],
+        
+         "FELLOWSHIP": [
+                {
+                  "ITEM": "1991",
+                  "DATA": "The Johns Hopkins Hospital, Baltimore, MDx",
+                  "ISSELECTED": true
+                }
+              ],
+    
+         "HONORSAWARDS": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Assistant Professor of Oncologyx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "Department of Molecular and Cellular Biologyx",
+                  "ISSELECTED": true
+                }
+              ],
+      
+              "MEMBERSHIPS": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Assistant Professor of Oncologyx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "Department of Molecular and Cellular Biologyx",
+                  "ISSELECTED": true
+                }
+              ],
+              "LABMEMBERS": [
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+              ],
+              "RESEARCH_OVERVIEW": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Assistant Professor of Oncology",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "Department of Molecular and Cellular Biology",
+                  "ISSELECTED": true
+                }
+              ],	
+		"EMAIL": "rockey@musc.edu",
+		"NIH_REPORTER_ID": "1865118",
+		"PHONE_NUMBER" : "",
+		"MEMBERSHIP": "Research",
+        "COLLEGE": "College of Medicine",
+		"VIEW_PROFILE": "profile_Link",
+        "BOARD_CERTIFICATIONS" : [{}],
+		"ACADEMIC_FOCUS": [{}],
+        "TITLE":[
+			{
+				"ITEM": "1",
+				"DATA": "Department of Cancer Biology",
+				"ISSELECTED": true
+			  },
+			  {
+				"ITEM": "2",
+				"DATA": "Division of VP, Research",
+				"ISSELECTED": true
+			  }
+			],	
+			"SPECIALITIES":[
+			{
+				"ITEM": "1",
+				"DATA": "Gastroenterology & Hepatology",
+				"ISSELECTED": true
+			  }
+			],	
+        	
+        "BIOGRAPHY": [{
+			"ITEM":"",
+			"DATA": "Don C. Rockey, M.D. joined MUSC as Professor and Chairman of our Department of Medicine effective September 1, 2012. A native of Florida, Dr. Rockey’s medical career has taken him from coast to coast. In 1980 he received his bachelor's degree in biology (summa cum laude) from Virginia Polytechnic Institute and State University, and he earned his M.D. from the Medical College of Virginia, winning numerous awards for academic excellence during his four years in Richmond.",
+			"ISSELECTED": true
+			}],
+            
+            
+
+     "CLINICAL_TRIALS":[{"KEYWORDS":"Liver",
+		"DATE_ADDED": "July 18th, 2022",
+		"TITLE": "A Phase 2, Randomized, Double-Blind, Double-Dummy, Placebo-Controlled Study Evaluating the Safety and Efficacy of Semaglutide, and the Fixed-Dose Combination of Cilofexor and Firsocostat, Alone and in Combination, in Subjects with Compensated Cirrhosis (F4) due to Nonalcoholic Steatohepatitis (NASH)",
+		"PRO Number": "Pro00119356",
+		"Researcher": "Don Rockey",
+		"Summary": "This is a Phase 2, randomized, double-blind, double-dummy, placebo-controlled study evaluating the efficacy and safety of SEMA, CILO/FIR, and their combination in subjects with compensated cirrhosis due to NASH."}],		
+		
+		"RESEARCH_INTEREST" : [{}],
+		"SELECTED_PMIDS": "34487314,35659464,34400337,35734751,35275898",
+		"ALL_PMIDS":"34487314,35659464,34400337,35734751,35275898,35266155,35293288,34904513,35197973,35030194,33604792,34974491,35053007,34333790,33867445,33759300,34379872,34175277,34125447,33905793,34238846,33693456,33010411,34109670,32892374,33725335,33982265,34141984",				
+		"PUBLICATION_LINK" : "https://www.ncbi.nlm.nih.gov/sites/myncbi/don.rockey.1/bibliography/41153011/public/?sort=date&direction=descending"
+      
+	}, {
+		"IMAGEBK": "https://muschealth.org/MUSCApps/HealthAssets/ProfileImages/Rojewski-Alana-Public-Health-Sciences.jpg",
+		"IMAGE" :"https://researchers.hcc.musc.edu/images/Rojewski.jpg",
+        "PRIMARY_NAME": "ALANA M. ROJEWSKI, PH.D.",
+		"FIRST_NAME": "ALANA",
+		"LAST_NAME": "ROJEWSKI",
+		"MIDDLE_INITAL": "M",
+		"SECONDARY_NAME": "",
+		"DEPARTMENT": "Medicine",
+		"ADDRESS" :"",
+		"PROGRAM": "Public Health Sciences",
+		"ACADEMIC_TITLE": "Associate Professor",
+		"POSITIONS": [{
+            "ITEM":"Position One",
+            "DATA": "Position",
+            "ISSELECTED": false
+            }],	
+
+            "EDUCATION_TRAINING": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Yale School of Medicine, New Haven, CT  Postdoctoral 03/2015",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "",
+                  "DATA": "Medical University of South Carolina, Charleston, SC Postdoctoral 12/2015",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+              ],
+        
+         "FELLOWSHIP": [
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+              ],
+    
+         "HONORSAWARDS": [
+                {
+                  "ITEM": "",
+                  "DATA": "Eminent Scholar in Public Health Sciences at MUSC - 2022",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "Society for Research on Nicotine and Tobacco: Treatment Network Travel Award - 2015",
+                  "ISSELECTED": true
+                }
+              ],
+      
+              "MEMBERSHIPS": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Member, Society for Research on Nicotine and Tobacco",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "",
+                  "DATA": "Member, American Psychological Association",
+                  "ISSELECTED": true
+                },
+                {
+                    "ITEM": "",
+                    "DATA": "",
+                    "ISSELECTED": false
+                  }
+              ],
+              "LABMEMBERS": [
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+              ],
+              "RESEARCH_OVERVIEW": [
+                {
+                  "ITEM": "1",
+                  "DATA": "",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "",
+                  "ISSELECTED": true
+                }
+              ],		
+		"EMAIL": "rojewski@musc.edu",
+		"NIH_REPORTER_ID": "11579305",
+		"PHONE_NUMBER" : "",
+		"MEMBERSHIP": "Research",
+        "COLLEGE": "College of Medicine",
+		"VIEW_PROFILE": "profile_Link",
+        "BOARD_CERTIFICATIONS" : [{}],
+		"CLINICAL_TRIALS":[],
+		"ACADEMIC_FOCUS": [{}],
+        "TITLE":[
+			{
+				"ITEM": "1",
+				"DATA": "Department of Medicine",
+				"ISSELECTED": true
+			  },
+			  {
+				"ITEM": "2",
+				"DATA": "Associate Professor",
+				"ISSELECTED": true
+			  }
+			],	
+			"SPECIALITIES":[
+			{
+				"ITEM": "1",
+				"DATA": "",
+				"ISSELECTED": false
+			  }
+			],	
+        "BIOGRAPHY": 
+         [{"ITEM":"",
+        "DATA": "Dr. Rojewski is an Associate Professor in the Department of Public Health Sciences, a Research Member of the Hollings Cancer Control Program, and the Associate Director of the MUSC Health Tobacco Treatment Program. She received her PhD in Psychology from the University of Florida, and completed a NIDA Postdoctoral Fellowship at Yale School of Medicine. Dr. Rojewski's research interests include tobacco treatment interventions for populations with medical comorbidities and implementing tobacco treatment interventions in the healthcare system.",
+        "ISSELECTED": true}],
+	
+		"RESEARCH_INTEREST": 
+                   [{"ITEM":"",
+                   "DATA": "Dr. Rojewski is an experimental psychologist with a focus in tobacco treatment research and cancer control. Specifically, her research goals are to develop tobacco treatment interventions for cancer patients and lung cancer screening patients, implement cost-effective interventions in the healthcare setting, and optimize treatment adherence.",
+                   "ISSELECTED": true }],
+		"SELECTED_PMIDS": "34197617,34270729,34077535,34226091,34197693",
+		"ALL_PMIDS":"34197617,34270729,34077535,34226091,34197693,33340400,33965149,33259805,32603713,34934462,31633739,29917118,30153737,32431757,29900753,29793736,27910714,27079499,26783291,26183404,25419583,24919399,24672264,24436474,24113927,15929646",	
+		"PUBLICATION_LINK" : "https://www.ncbi.nlm.nih.gov/sites/myncbi/1davr6OJmjdQz/bibliography/48049425/public/"
+       
+	}, {
+		"IMAGE": "https://muschealth.org/MUSCApps/HealthAssets/ProfileImages/Rodriguez-Blanco-Jezabel-Pediatrics.jpg",
+		"PRIMARY_NAME": "JEZABEL RODRIGUEZ BLANCO, PH.D.",
+		"SECONDARY_NAME": "",
+        "FIRST_NAME": "",
+		"LAST_NAME": "",
+		"MIDDLE_INITAL": "",
+		"DEPARTMENT": "Pediatrics",
+		"ADDRESS" :"",
+		"PROGRAM": "Cancer Biology",
+		"ACADEMIC_TITLE": "Assistant Professor",
+		"POSITIONS": [{
+            "ITEM":"Position One",
+            "DATA": "Position",
+            "ISSELECTED": false
+            }],	
+            "EDUCATION_TRAINING": [
+                {
+                  "ITEM": "1988",
+                  "DATA": "The Johns Hopkins Hospital, Baltimore, MD Osler Med Intern/Residentx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "1985",
+                  "DATA": " University of Texas Health Science Center, San Antonio, TXx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "1981",
+                  "DATA": "University of Texas Southwestern Medical Center, Dallas, TX PhDx",
+                  "ISSELECTED": true
+                }
+              ],
+        
+         "FELLOWSHIP": [
+                {
+                  "ITEM": "1991",
+                  "DATA": "The Johns Hopkins Hospital, Baltimore, MDx",
+                  "ISSELECTED": true
+                }
+              ],
+    
+         "HONORSAWARDS": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Assistant Professor of Oncologyx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "Department of Molecular and Cellular Biologyx",
+                  "ISSELECTED": true
+                }
+              ],
+      
+              "MEMBERSHIPS": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Assistant Professor of Oncologyx",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "Department of Molecular and Cellular Biologyx",
+                  "ISSELECTED": true
+                }
+              ],
+              "LABMEMBERS": [
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+              ],
+              "RESEARCH_OVERVIEW": [
+                {
+                  "ITEM": "1",
+                  "DATA": "",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "",
+                  "ISSELECTED": true
+                }
+              ],			
+		"EMAIL": "rblanco@musc.edu",
+		"NIH_REPORTER_ID": "",
+		"PHONE_NUMBER" : "",
+		"MEMBERSHIP": "Research",
+        "COLLEGE": "College of Medicine",
+		"VIEW_PROFILE": "profile_Link",
+        "BOARD_CERTIFICATIONS" : [{}],
+		"CLINICAL_TRIALS":[],
+		"ACADEMIC_FOCUS": [{}],
+        "TITLE":[
+			{
+				"ITEM": "1",
+				"DATA": "Department of Pediatrics",
+				"ISSELECTED": true
+			  },
+			  {
+				"ITEM": "2",
+				"DATA": "Assistant Professor",
+				"ISSELECTED": true
+			  }
+			],	
+			"SPECIALITIES":[
+			{
+				"ITEM": "1",
+				"DATA": "",
+				"ISSELECTED": false
+			  }
+			],	
+        "BIOGRAPHY": [{}],
+		"RESEARCH_INTEREST" : [{}],
+		"SELECTED_PMIDS": "",
+		"ALL_PMIDS":""	
+	
+	}, {
+		"IMAGEBK": "https://muschealth.org/MUSCApps/HealthAssets/ProfileImages/rosenzsa.jpg",
+        "IMAGE" :"https://researchers.hcc.musc.edu/images/ROSENZWEIG.jpg",
+		"PRIMARY_NAME": "STEVEN A. ROSENZWEIG, PH.D.",
+		"SECONDARY_NAME": "",
+        "FIRST_NAME": "",
+		"LAST_NAME": "",
+		"MIDDLE_INITAL": "",
+		"DEPARTMENT": "Cell and Molecular Pharmacology",
+		"ADDRESS" :"",
+		"PROGRAM": "Developmental Cancer Therapeutics",
+		"ACADEMIC_TITLE": "Professor",
+		"POSITIONS": [{
+            "ITEM":"Position One",
+            "DATA": "Position",
+            "ISSELECTED": false
+            }],	
+            "EDUCATION_TRAINING": [
+                {
+                  "ITEM": "",
+                  "DATA": "Yale Univ. School of Medicine, New Haven, CT Postdoc -1983",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "",
+                  "DATA": " University of Toronto, Toronto, Alberta, Canada PhD - 6/1980 ",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+              ],
+        
+         "FELLOWSHIP": [
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+              ],
+    
+         "HONORSAWARDS": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Speaker, 7th Annual TEDxCharleston event, “Cascades”, “Precision Drug Delivery System” - 2022",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "Elliott Osserman Distinguished Service Award, Israel Cancer Research Fund - 2016",
+                  "ISSELECTED": true
+                }
+              ],
+      
+              "MEMBERSHIPS": [
+                {
+                  "ITEM": "1",
+                  "DATA": "Member, Cellular Cancer Biology Imaging Research (CCBIR) Program - U54, Review Panel - 2021",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "DOD CDMRP Breast Cancer Research Program, Cell Biology-1 Panel - 2020",
+                  "ISSELECTED": true
+                }
+              ],
+              "LABMEMBERS": [
+                {
+                  "ITEM": "",
+                  "DATA": "",
+                  "ISSELECTED": false
+                }
+                
+              ],
+              "RESEARCH_OVERVIEW": [
+                {
+                  "ITEM": "1",
+                  "DATA": "",
+                  "ISSELECTED": true
+                },
+                {
+                  "ITEM": "2",
+                  "DATA": "",
+                  "ISSELECTED": true
+                }
+              ],			
+		"EMAIL": "rosenza@musc.edu",
+		"NIH_REPORTER_ID": "",
+		"PHONE_NUMBER" : "",
+		"MEMBERSHIP": "Research",
+        "COLLEGE": "College of Medicine",
+		"VIEW_PROFILE": "profile_Link",
+        "BOARD_CERTIFICATIONS" : [{}],
+		"CLINICAL_TRIALS":[],
+		"ACADEMIC_FOCUS": [{}],
+        "TITLE":[
+			{
+				"ITEM": "1",
+				"DATA": "Department of Cell and Molecular Pharmacology",
+				"ISSELECTED": true
+			  },
+			  {
+				"ITEM": "2",
+				"DATA": "Professor",
+				"ISSELECTED": true
+			  }
+			],	
+			"SPECIALITIES":[
+			{
+				"ITEM": "1",
+				"DATA": "",
+				"ISSELECTED": false
+			  }
+			],	
+        "BIOGRAPHY": [
+			{
+			"ITEM": "1973",
+			"DATA": "B.S. Biology, State University of New York, College at Fredonia, Fredonia, NY"
+			},
+			{
+			"ITEM": "1975",
+			"DATA": "M.S. Physiology, Wayne State University School of Medicine, Detroit, MI"
+			},
+			{
+			"ITEM": "1980",
+			"DATA": "Ph.D. Physiology, University of Toronto, Toronto, Ontario, Canada"
+			},
+			{
+			"ITEM": "1980",
+			"DATA": "- Banting and Best Department of Medical Research and Department of Physiology"
+			},
+			{
+			"ITEM": "1983",
+			"DATA": "Postdoctoral Fellow, Yale University School of Medicine, New Haven, CT"
+			},
+			{
+			"ITEM": "1983",
+			"DATA": "- Department of Cell Biology"
+			},
+			{
+			"ITEM": "1984",
+			"DATA": "Associate Research Scientist, Department of Cell Biology, Yale University"
+			},
+			{
+			"ITEM": "1984",
+			"DATA": "School of Medicine"
+			},
+			{
+			"ITEM": "1984-91",
+			"DATA": "Assistant Professor, Departments of Ophthalmology & Visual Science"
+			},
+			{
+			"ITEM": "1984-91",
+			"DATA": "and Cell Biology, Yale University School of Medicine"
+			},
+			{
+			"ITEM": "1990-91",
+			"DATA": "Assistant Professor, Graduate Program in Neuroscience, Yale University"
+			},
+			{
+			"ITEM": "1991-99",
+			"DATA": "Associate Professor, Department of Cell and Molecular Pharmacology & Experimental"
+			},
+			{
+			"ITEM": "1991-99",
+			"DATA": "Therapeutics and Graduate Program in Molecular and Cellular"
+			},
+			{
+			"ITEM": "1991-99",
+			"DATA": "Biology & Pathobiology, Medical University of South Carolina"
+			},
+			{
+			"ITEM": "1992",
+			"DATA": "Tenure, Department of Cell and Molecular Pharmacology & Experimental"
+			},
+			{
+			"ITEM": "1992",
+			"DATA": "Therapeutics, Medical University of South Carolina"
+			},
+			{
+			"ITEM": "1999",
+			"DATA": "Professor, Department of Cell and Molecular Pharmacology & Experimental"
+			},
+			{
+			"ITEM": "1999",
+			"DATA": "Therapeutics and Graduate Program in Molecular and Cellular Biology &"
+			},
+			{
+			"ITEM": "1999",
+			"DATA": "Pathobiology, Medical University of South Carolina"
+			}
+			],
+		"RESEARCH_INTEREST": [{}],		
+		"SELECTED_PMIDS": "28160562,29551130,29876004,30267961,30526620,31419957" ,
+		"ALL_PMIDS":"28160562,29551130,29876004,30267961,30526620,31419957",	
+        "PUBLICATION_LINK" : ""	
+	
+	}]
+}

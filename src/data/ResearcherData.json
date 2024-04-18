@@ -1,0 +1,227 @@
+{
+    "RESEARCHERDATA": [
+      {
+        "IMAGE": "https://researchers.hcc.musc.edu/images/photos/rockey.jpeg",
+        "FIRST_NAME": "Don",
+        "LAST_NAME": "Rockey",
+        "MIDDLE_INITIAL": "C",
+        "PRIMARY_NAME": "Don Rockey, M.D.",
+        "EMAIL": "rockey@musc.edu",
+        "MEMBERSHIP": "Member",
+        "PUBLIC_PUBS_LINKk": " https://www.ncbi.nlm.nih.gov/myncbi/don.rockey.1/bibliography/public/",
+        "COLLEGE": "College of Medicine ",
+        "DEPARTMENT": " Medicine",
+        "PROGRAM": "Developmental Cancer Therapeutics",
+        "ACADEMIC_TITLE": "Professor, Department of Medicine",
+        "ALL_PMIDS": "37386866,37351075,37349605,37144534,37144529,37141513,36899112,36691947,36519690,36174069,36044673,35960334,35921332,35750249,35734751,35688153,35591774,35331917,35275902,35266155,35246467,35197973,35074471,35030194,34995572,34974491,34904513,34882295,34400337,34379872,34238846,34079858,33693456,33604792,32553748,32090602,31960201,31476284,31326094,30865044,30865043,30012408,29990488,29769214,29408569,29252684",
+        "SELECTED_PMIDS": "37386866,37351075,37349605,37144534,37144529",
+        "NIH_REPORTER_ID": "1865118",
+        "DISEASE_THERAPY_AREA": "Interrogation of Cancer-specific Immunologic & Oncogenic Targets",
+        "ORCID": "",
+        "RESEARCH_INTEREST": [
+          {
+            "ITEM": "RESEARCH_INTEREST",
+            "INTEREST": "My laboratory has been a leader in studying the Pim protein kinase over the last decade. We were the first to demonstrate that the levels of Pim protein kinase are regulated by hematopoietic growth factors, and prevent the apoptotic death of these cells. We explained this result in part by demonstrating that the proapoptic BH3 protein Bad was a Pim substrate and inhibited by this protein kinase. Most recently, using our knowledge of Pim protein kinase biology, we have developed small molecule inhibitors of this protein kinase that block the growth of prostate cancer and kill leukemic cells both in vitro and in vivo. These discoveries have laid the groundwork for the proposed research by allowing us to develop the unique reagents and understanding of Pim biology. Our ability to study Pim in more detail is based on 30 years of experience documented in 120 publications examining complex signal transduction systems in normal and transformed cell models. ",
+            "ISSELECTED": true
+          }
+        ],
+        "EDUCATION_TRAINING": [
+          {
+            "ITEM": "Education_Training",
+            "DATA": " Virginia Polytechnic Institute & State University, Blacksburg, VA 1980 BS",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Education_Training",
+            "DATA": " Medical College of Virginia School of Medicine, Richmond, VA 1984 MD",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Education_Training",
+            "DATA": "University of California at San Francisco, CA 1988 Resident",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Education_Training",
+            "DATA": "University of California at San Francisco, CA 1992 Fellow",
+            "ISSELECTED": true
+          }
+        ],
+        "POSITIONS": [
+          {
+            "ITEM": "Positions",
+           "DATA": "Director, Medical University of South Carolina (MUSC) Digestive Disease Research Center 2020-Present 2020-Present",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Professor, Department of Medicine, MUSC 2012-Present 2012-Present",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Chair, Department of Medicine, (MUSC 2012-2020 2012-2020",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Professor of Medicine, University of Texas, Southwestern (UTSW), Dallas, TX 2005-2012 2005-2012",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Chief, Division of Digestive and Liver Diseases, UTSW 2005-2012 2005-2012",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Professor of Medicine, Duke University Medical Center (DUMC), Durham, NC 2002-2005 2002-2005",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Director, Hepatology and the Duke Liver Center, DUMC 1997-2005 1997-2005",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Associate Professor of Medicine, DUMC 1997-2002 1997-2002",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Assistant Professor of Medicine and Attending Physician, University of California, San Francisco (UCSF) 1995-1996 1995-1996",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Research Fellow, Gastroenterology, UCSF 1989-1992 1989-1992",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Clinical Fellow, Gastroenterology, UCSF 1988-1989 1988-1989",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Resident (Categorical Medicine), UCSF 1985-1987 1985-1987",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Chief Resident (Categorical Medicine), UCSF 1987-1988 1987-1988",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Positions",
+            "DATA": "Intern (Categorical Medicine), UCSF 1984-1985 1984-1985",
+            "ISSELECTED": true
+          }
+        ],
+        "HONORSAWARDS": [
+          {
+            "ITEM": "Honors",
+            "DATA": "Distinguished University Professor (MUSC, Institutional) 2020  2020 ",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Summa Cum Laude, Virginia Polytechnic Institute & State University 1980 1980",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "A.H. Strauss Award (academic excellence, Medical School) 1982 1982",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Alpha Omega Alpha (AOA, junior year, Medical School) 1983 1983",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "A.D. Williams Award (top student in Junior Clinical Clerkships) 1983 1983",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Merck Award (academic excellence, Medical School) 1983 1983",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "William Branch Porter Award in Medicine (top student in Internal Medicine) 1984 1984",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Herman Hertzberg Award (excellence in service and scholarship, Medical School) 1984 1984",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Senior Fellow Award, American Gastroenterological Association 1990 1990",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Research Scholar (Industry) Award, American Gastroenterological Association 1992 1992",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Liver Scholar Award, American Liver Foundation 1992 1992",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Young Scholar Award, World Congress of Gastroenterology 1994 1994",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Glaxo Institute of Digestive Health Research Award 1995 1995",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Miles and Shirley Fiterman Basic Research Award 1996 1996",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Clinical Scientist Research Award, Burroughs Wellcome Fund 2000 2000",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "American Society of Clinical Investigation  2001 2001",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Fellow, American Gastroenterological Association 2005 2005",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "American Association of Physicians 2007 2007",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Teaching Excellence Award as Educator-Mentor: Academic/Scholarship (MUSC, Institutional) 2016 2016",
+            "ISSELECTED": true
+          },
+          {
+            "ITEM": "Honors",
+            "DATA": "Faculty Excellence Award in Teaching (MUSC, College of Medicine) 2016 2016",
+            "ISSELECTED": true
+          }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,27 @@
+# vue-container
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+<!-- TinyMCE API adbavhe5byebymlhqb9ekb7znwm218g8dy5oszcis66wszir -->

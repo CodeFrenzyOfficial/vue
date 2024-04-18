@@ -1,0 +1,60 @@
+https://nih.figshare.com/collections/iCite_Database_Snapshots_NIH_Open_Citation_Collection_/4586573/32
+
+iCite provides bibliometrics and metadata on publications indexed in PubMed, organized into three modules:
+
+Influence: Delivers metrics of scientific influence, field-adjusted and benchmarked to NIH publications as the baseline
+
+Translation: Measures how Human, Animal, or Molecular/Cellular Biology-oriented each paper is; tracks and predicts citation by clinical articles
+
+Open Cites: Disseminates link-level, public-domain citation data from the NIH Open Citation Collection
+
+
+Definitions for individual data fields:
+
+PMID: PubMed Identifier, an article ID as assigned in PubMed by the National Library of Medicine
+
+doi: Digital Object Identifier, if available
+
+Year: Year the article was published
+
+Title: Title of the article
+
+Authors: List of author names
+
+Journal: Journal name (ISO abbreviation)
+
+Is_Research_Article: Flag indicating whether the Publication Type tags for this article are consistent with that of a primary research article
+
+Relative_Citation_Ratio: Relative Citation Ratio (RCR)--OPA's metric of scientific influence. Field-adjusted, time-adjusted and benchmarked against NIH-funded papers. The median RCR for NIH funded papers in any field is 1.0. An RCR of 2.0 means a paper is receiving twice as many citations per year than the median NIH funded paper in its field and year, while an RCR of 0.5 means that it is receiving half as many citations per year. Calculation details are documented in Hutchins et al., PLoS Biol. 2016;14(9):e1002541.
+
+Provisional: RCRs for papers published in the previous two years are flagged as "provisional", to reflect that citation metrics for newer articles are not necessarily as stable as they are for older articles. Provisional RCRs are provided for papers published previous year, if they have received with 5 citations or more, despite being, in many cases, less than a year old. All papers published the year before the previous year receive provisional RCRs. The current year is considered to be the NIH Fiscal Year which starts in October. For example, in July 2019 (NIH Fiscal Year 2019), papers from 2018 receive provisional RCRs if they have 5 citations or more, and all papers from 2017 receive provisional RCRs. In October 2019, at the start of NIH Fiscal Year 2020, papers from 2019 receive provisional RCRs if they have 5 citations or more and all papers from 2018 receive provisional RCRs.
+
+Citation_Count: Number of unique articles that have cited this one
+
+Citations_per_Year: Citations per year that this article has received since its publication. If this appeared as a preprint and a published article, the year from the published version is used as the primary publication date. This is the numerator for the Relative Citation Ratio.
+
+Field_Citation_Rate: Measure of the intrinsic citation rate of this paper's field, estimated using its co-citation network.
+
+Expected_Citations_per_Year: Citations per year that NIH-funded articles, with the same Field Citation Rate and published in the same year as this paper, recieve. This is the denominator for the Relative Citation Ratio.
+
+NIH_Percentile: Percentile rank of this paper's RCR compared to all NIH publications. For example, 95% indicates that this paper's RCR is higher than 95% of all NIH funded publications.
+
+Human: Fraction of MeSH terms that are in the Human category (out of this article's MeSH terms that fall into the Human, Animal, or Molecular/Cellular Biology categories)
+
+Animal: Fraction of MeSH terms that are in the Animal category (out of this article's MeSH terms that fall into the Human, Animal, or Molecular/Cellular Biology categories)
+
+Molecular_Cellular: Fraction of MeSH terms that are in the Molecular/Cellular Biology category (out of this article's MeSH terms that fall into the Human, Animal, or Molecular/Cellular Biology categories)
+
+x_coord: X coordinate of the article on the Triangle of Biomedicine
+
+y_coord: Y Coordinate of the article on the Triangle of Biomedicine
+
+Is_Clinical: Flag indicating that this paper meets the definition of a clinical article.
+
+Cited_by_Clin: PMIDs of clinical articles that this article has been cited by.
+
+APT: Approximate Potential to Translate is a machine learning-based estimate of the likelihood that this publication will be cited in later clinical trials or guidelines.
+
+Cited_by: PMIDs of articles that have cited this one.
+
+References: PMIDs of articles in this article's reference list.
